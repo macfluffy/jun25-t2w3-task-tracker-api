@@ -1,0 +1,29 @@
+{
+  "name": "jun25-t2w3-task-tracker-api",
+  "version": "1.0.0",
+  "description": "People need to keep track of their tasks and monitor what's done or pending.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macfluffy/jun25-t2w3-task-tracker-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/macfluffy/jun25-t2w3-task-tracker-api/issues"
+  },
+  "homepage": "https://github.com/macfluffy/jun25-t2w3-task-tracker-api#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "eslint": "^9.39.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "prettier": "^3.6.2"
+  }
+}
