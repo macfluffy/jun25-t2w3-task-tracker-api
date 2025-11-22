@@ -20,8 +20,10 @@
   "homepage": "https://github.com/macfluffy/jun25-t2w3-task-tracker-api#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
     "eslint": "^9.39.1",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^9.0.0",
     "prettier": "^3.6.2"
