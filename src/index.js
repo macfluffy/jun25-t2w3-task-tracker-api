@@ -14,7 +14,7 @@ const app = express();
 // Configure security settings
 const corsOptions = {
     origin: "http://localhost:5000",
-    optionSuccessStatus: 200
+    optionsSuccessStatus: 200
 };
 
 // Apply security middlewares to the application

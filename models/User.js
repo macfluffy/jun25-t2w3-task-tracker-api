@@ -1,6 +1,7 @@
 // Import Packages
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 
 // Define the Schema
 const UserSchema = mongoose.Schema({
@@ -22,9 +23,18 @@ const UserSchema = mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ["user", "admin"]
+        enum: ["user", "admin"],
+        default: "user"
     },
 },
 {timestamps: true});
+
+// Hash user passwords in the schema
+UserSchema.pre("save", async function (next) {
+    // Only hash if password new or changed
+    if (!this.isModified("password")) return next();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+})
 
 module.exports = mongoose.model("User", UserSchema);
