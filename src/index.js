@@ -7,9 +7,11 @@ const mongoose = require("mongoose");
 const helmet = require("helmet");
 const cors = require("cors");
 
-
 // Create an instance of the application server
 const app = express();
+
+const authRoutes = require("./routes/auth");
+app.use("/api/v1/auth", authRoutes);
 
 // Configure security settings
 const corsOptions = {

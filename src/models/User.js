@@ -30,11 +30,10 @@ const UserSchema = mongoose.Schema({
 {timestamps: true});
 
 // Hash user passwords in the schema
-UserSchema.pre("save", async function (next) {
+UserSchema.pre("save", async function () {
     // Only hash if password new or changed
-    if (!this.isModified("password")) return next();
+    if (!this.isModified("password")) return;
     this.password = await bcrypt.hash(this.password, 10);
-    next();
-})
+});
 
 module.exports = mongoose.model("User", UserSchema);
