@@ -10,9 +10,10 @@ module.exports = (request, response, next) => {
         error: "Missing token"
     });
     // Get the token from the header
-    const token = header.split (" ")[1];
+    const token = header.split(" ")[1];
     // Fetch the payload data from the token
     try {
+        // eslint-disable-next-line no-undef
         request.user = jwt.verify(token, process.env.JWT_SECRET);
         next();
     } 

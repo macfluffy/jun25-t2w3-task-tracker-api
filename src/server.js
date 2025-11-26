@@ -13,7 +13,7 @@ mongoose
     .connect(MONGO_URI)
     .then(() => {
         console.log("Database Connected!");
-        app.listen("/", () => {
+        app.listen(PORT, () => {
             console.log(`Server is running on PORT: ${PORT}`);
         });
     })
