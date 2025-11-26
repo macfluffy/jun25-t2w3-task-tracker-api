@@ -1,7 +1,7 @@
 // Import Packages
 // Application Framework
 const express = require("express");
-//const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 // Security Middlewares
 const helmet = require("helmet");
@@ -30,6 +30,13 @@ app.use(express.json());
 app.get("/", (request, response) => {
     response.json({
         message: "Hello from Task Tracker"
+    });
+});
+
+app.get("/databaseHealth", (request, response) => {
+    response.json({
+        models: mongoose.connection.modelNames(),
+        host: mongoose.connection.host
     });
 });
 

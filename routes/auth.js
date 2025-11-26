@@ -40,6 +40,7 @@ router.post("/login", async (request, response) => {
         //eslint-disable-next-line no-undef
         process.env.JWT_SECRET,
         {expiresIn: "1h"});
+        response.json({token});
     } catch (error) {
         response.status(400).json({
             error: error.message
