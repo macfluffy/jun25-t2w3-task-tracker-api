@@ -12,7 +12,7 @@ const cors = require("cors");
 
 // Configure security settings
 const corsOptions = {
-    origin: "http://localhost:5000",
+    origin: ["http://localhost:5000", "http://localhost:5137"],
     optionsSuccessStatus: 200
 };
 
